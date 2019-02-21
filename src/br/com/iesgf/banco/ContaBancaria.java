@@ -2,19 +2,28 @@ package br.com.iesgf.banco;
 
 public class ContaBancaria {
 
-	String numero;
+	private String numero;
 	
-	double saldo;
+	private double saldo;
+	
+	private ProprietarioDaConta dono;
 
-	ContaBancaria(String numero, double saldo) {
+	public ContaBancaria(String numero, double saldo, ProprietarioDaConta dono) {
 		this.numero = numero;
 		this.saldo = saldo;
+		this.dono = dono;
 	}
 
-	String getNumero() {
+	
+	
+	public String getNumero() {
 		return numero;
 	}
-	
+
+	public double getSaldo() {
+		return saldo;
+	}
+
 	void depositar(double montante) {
 		this.saldo += montante;
 	}
@@ -23,8 +32,5 @@ public class ContaBancaria {
 		this.saldo -= montante;
 	}
 	
-	double getSaldo() {
-		return saldo;
-	}
 
 }
